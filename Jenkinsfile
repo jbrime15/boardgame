@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -7,7 +6,7 @@ pipeline {
         maven 'maven'
     }
 
-    environment {
+  /*  environment {
         AWS_ACCESS_KEY_ID = credentials('aws-cred') // AWS Access Key ID
         AWS_SECRET_ACCESS_KEY = credentials('aws-cred') // AWS Secret Access Key
         AWS_DEFAULT_REGION = 'us-east-2'
@@ -15,14 +14,15 @@ pipeline {
         DOCKER_TAG = 'latest' // Tag for the image
         ECR_URL = '211125403425.dkr.ecr.us-east-2.amazonaws.com' // ECR URL
         ECR_REPOSITORY = 'cloudgenius' // Your ECR repository name
-    }
+    }  */
 
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/CloudGeniuses/Boardgame.git'
+                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/jbrime15/boardgame.git'
             }
         }
+
 
         stage('Compile') {
             steps {
