@@ -5,7 +5,7 @@ pipeline {
         jdk 'jdk17'
         maven 'maven'
     }
-
+/*
     environment {
         AWS_ACCESS_KEY_ID = credentials('aws-cred') // AWS Access Key ID
         AWS_SECRET_ACCESS_KEY = credentials('aws-cred') // AWS Secret Access Key
@@ -15,7 +15,7 @@ pipeline {
         ECR_URL = '588738597760.dkr.ecr.us-east-2.amazonaws.com/jbrime15' // ECR URL
         ECR_REPOSITORY = 'jbrime15' // Your ECR repository name
     } 
-
+*/
     stages {
         stage('Git Checkout') {
             steps {
@@ -42,7 +42,7 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             }
         }
-
+/*
         stage('Build Docker Image') {
             steps {
                 script {
@@ -73,7 +73,7 @@ pipeline {
             }
         }
     }
-
+*/
     post {
         always {
             script {
