@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -6,7 +7,7 @@ pipeline {
         maven 'maven'
     }
 
-  /*  environment {
+   /* environment {
         AWS_ACCESS_KEY_ID = credentials('aws-cred') // AWS Access Key ID
         AWS_SECRET_ACCESS_KEY = credentials('aws-cred') // AWS Secret Access Key
         AWS_DEFAULT_REGION = 'us-east-2'
@@ -14,7 +15,7 @@ pipeline {
         DOCKER_TAG = 'latest' // Tag for the image
         ECR_URL = '211125403425.dkr.ecr.us-east-2.amazonaws.com' // ECR URL
         ECR_REPOSITORY = 'cloudgenius' // Your ECR repository name
-    }  */
+    } */
 
     stages {
         stage('Git Checkout') {
@@ -43,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+     /*   stage('Build Docker Image') {
             steps {
                 script {
                     echo "Building Docker image: ${DOCKER_IMAGE_NAME}:${DOCKER_TAG}"
@@ -72,7 +73,7 @@ pipeline {
                 }
             }
         }
-    }
+    } */
 
     post {
         always {
