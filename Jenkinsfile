@@ -12,8 +12,8 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-2'
         DOCKER_IMAGE_NAME = 'boardgame' // Set the desired image name to 'boardgame'
         DOCKER_TAG = 'latest' // Tag for the image
-        ECR_URL = '211125403425.dkr.ecr.us-east-2.amazonaws.com' // ECR URL
-        ECR_REPOSITORY = 'cloudgenius' // Your ECR repository name
+        ECR_URL = '588738597760.dkr.ecr.us-east-2.amazonaws.com/jbrime15' // ECR URL
+        ECR_REPOSITORY = 'jbrime15' // Your ECR repository name
     } 
 
     stages {
@@ -99,7 +99,7 @@ pipeline {
                 emailext (
                     subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus.toUpperCase()}",
                     body: body,
-                    to: 'nikhilkhariya40@gmail.com',
+                    to: 'jubrilibrahim40@gmail.com',
                     from: 'jenkins@example.com',
                     replyTo: 'jenkins@example.com',
                     mimeType: 'text/html',
